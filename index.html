@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | Weekly To-Do List</title>
+    <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Smooth fade transition for welcome page */
+    .welcome-page {
+      opacity: 1;
+      transition: opacity 0.8s ease;
+    }
+    .fade-out {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body class="welcome-page">
+  <div class="welcome-container">
+    <h1>Welcome to Your Weekly Planner!</h1>
+    <p>Organize your week, track tasks, and stay productive.</p>
+    <button id="enterButton">Enter Planner</button>
+  </div>
+
+  <script>
+    const enterButton = document.getElementById('enterButton');
+    const welcomePage = document.querySelector('.welcome-page');
+
+    enterButton.addEventListener('click', () => {
+      // Add fade-out class
+      welcomePage.classList.add('fade-out');
+
+      // Wait for the transition to finish, then redirect
+      setTimeout(() => {
+        window.location.href = 'weekly.html';
+      }, 800); // duration matches CSS transition
+    });
+  </script>
+</body>
+</html>
